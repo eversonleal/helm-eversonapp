@@ -25,19 +25,11 @@ podSecurityContext: {}
 securityContext: {}
 
 service:
-  type: NodePort
+  type: LoadBalancer
   port: 80
 
 ingress:
-  enabled: true
-  hosts: [
-    { 
-      host: eversonapp,
-      paths: [
-        path: /
-      ]
-    } 
-  ]
+  enabled: false
 
 resources: {}
 

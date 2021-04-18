@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "eversonapp.fullname" . }}-test-connection"
+  labels:
+    {{- include "eversonapp.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "eversonapp.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

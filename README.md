@@ -10,7 +10,7 @@ Clone this repo
 1. Install chart into the K8s cluster:
 
 ```bash
-helm install eversonapp eversonapp/ --values eversonapp/values.yaml
+helm install eversonapp helm-eversonapp/ --values helm-eversonapp/values.yaml
 ```
 
 2. Everything magically done.
